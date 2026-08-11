@@ -8,7 +8,9 @@ import {
   Check,
   Github,
   Linkedin,
+  Mail,
   Menu,
+  Phone,
   Sparkles,
   X,
 } from 'lucide-react'
@@ -17,6 +19,8 @@ import { projectVisuals } from './components/ProjectVisuals'
 
 const githubUrl = 'https://github.com/JamieWamz'
 const linkedinUrl = 'https://linkedin.com/in/Mundia-Wamuyuwa'
+const email = 'wamuyuwamundia@gmail.com'
+const phone = '+260772289096'
 const portraitUrl = `${import.meta.env.BASE_URL}mundia-portrait.png`
 
 const reveal = {
@@ -321,6 +325,16 @@ function Connect() {
             <Github className="h-4 w-4" /> Follow on GitHub
           </ExternalLink>
         </div>
+        <div className="relative z-10 mx-auto mt-8 flex max-w-2xl flex-col items-stretch justify-center gap-3 sm:flex-row">
+          <a className="contact-link" href={`mailto:${email}`}>
+            <Mail className="h-4 w-4 text-electric" />
+            <span>{email}</span>
+          </a>
+          <a className="contact-link" href={`tel:${phone}`}>
+            <Phone className="h-4 w-4 text-ember" />
+            <span>+260 772 289 096</span>
+          </a>
+        </div>
       </motion.div>
     </section>
   )
@@ -332,6 +346,7 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-5 border-t border-white/[0.07] pt-7 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} Mundia Wamuyuwa. Built with care in Lusaka.</p>
         <div className="flex items-center gap-5 font-mono text-[9px] uppercase tracking-[0.16em]">
+          <a className="transition hover:text-white" href={`mailto:${email}`}>Email</a>
           <a className="transition hover:text-white" href="#top">Back to top ↑</a>
           <ExternalLink className="transition hover:text-white" href={linkedinUrl}>LinkedIn</ExternalLink>
           <ExternalLink className="transition hover:text-white" href={githubUrl}>GitHub</ExternalLink>
